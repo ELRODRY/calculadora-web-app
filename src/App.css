@@ -5,7 +5,29 @@
   text-align: center;
 }
 
-h1 {
+.calculadora {
+  border: 1px solid greenyellow;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contenedorResultado {
+  display: flex;
+  justify-content: center;
+}
+
+.resultado {
+  display: flex;
   border: 1px solid red;
   height: 30px;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }

@@ -58,7 +58,10 @@ export default function App() {
 
   return (
     <>
-      <form id="inputsForm" onSubmit={(e) => handleSubmit(e)}>
+      <h1>CALCULADORA WEB</h1>
+
+
+      <form className="calculadora" id="inputsForm" onSubmit={(e) => handleSubmit(e)}>
         <label htmlFor="valor1">valor1</label>
         <input name="valor1" defaultValue={localStorage.getItem("valor1")} />
         <label htmlFor="valor2">valor2</label>
@@ -69,12 +72,19 @@ export default function App() {
         />
         <button type="submit">INGRESAR VALOR</button>
       </form>
-      <button onClick={add}>+</button>
-      <button onClick={subtract}>-</button>
-      <button onClick={multiply}>x</button>
-      <button onClick={divide}>/</button>
+      <div className="add-subtract">
+        <button onClick={add}>+</button>
+        <button onClick={subtract}>-</button>
+      </div>
+      <div className="multiply-divide">
+        <button onClick={multiply}>x</button>
+        <button onClick={divide}>/</button>
+      </div>
       <button onClick={reset}>Reset</button>
-      <h1>{localStorage.getItem("result")}</h1>
+      <div className="contenedorResultado">
+        <h2 className="resultado">{localStorage.getItem("result")}</h2>
+      </div>
+
     </>
   );
 }

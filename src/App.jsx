@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useEffect } from "react";
 import "./App.css";
 export default function App() {
   const handleSubmit = (event) => {
@@ -53,8 +52,8 @@ export default function App() {
     localStorage.clear("result");
     localStorage.clear("valor1");
     localStorage.clear("valor2");
-    document.getElementById("inputsForm").reset()
-    setTriggerResult(!triggerResult)
+    document.getElementById("inputsForm").reset();
+    setTriggerResult(!triggerResult);
   };
 
   return (
@@ -74,11 +73,8 @@ export default function App() {
       <button onClick={subtract}>-</button>
       <button onClick={multiply}>x</button>
       <button onClick={divide}>/</button>
-      <button onClick={reset}>
-        Reset
-      </button>
+      <button onClick={reset}>Reset</button>
       <h1>{localStorage.getItem("result")}</h1>
     </>
   );
 }
-//  tuvieja //6666666

@@ -60,29 +60,39 @@ export default function App() {
     <>
       <h1>CALCULADORA WEB</h1>
 
+      <div className="bordeExterior">
+        <form className="calculadora" id="inputsForm" onSubmit={(e) => handleSubmit(e)}>
 
-      <form className="calculadora" id="inputsForm" onSubmit={(e) => handleSubmit(e)}>
-        <label htmlFor="valor1">valor1</label>
-        <input name="valor1" defaultValue={localStorage.getItem("valor1")} />
-        <label htmlFor="valor2">valor2</label>
-        <input
-          name="valor2"
-          type="valor2"
-          defaultValue={localStorage.getItem("valor2")}
-        />
-        <button type="submit">INGRESAR VALOR</button>
-      </form>
-      <div className="add-subtract">
-        <button onClick={add}>+</button>
-        <button onClick={subtract}>-</button>
-      </div>
-      <div className="multiply-divide">
-        <button onClick={multiply}>x</button>
-        <button onClick={divide}>/</button>
-      </div>
-      <button onClick={reset}>Reset</button>
-      <div className="contenedorResultado">
-        <h2 className="resultado">{localStorage.getItem("result")}</h2>
+          <label htmlFor="valor1">Valor1</label>
+          <input
+            className="inputValor1"
+            name="valor1"
+            id="valor1"
+            defaultValue={localStorage.getItem("valor1")}
+          />
+
+          <label htmlFor="valor2">Valor2</label>
+          <input
+            className="inputValor2"
+            name="valor2"
+            id="valor2"
+            defaultValue={localStorage.getItem("valor2")}
+          />
+
+          <button type="submit">INGRESAR VALOR</button>
+        </form>
+        <div className="add-subtract">
+          <button onClick={add}>+</button>
+          <button onClick={subtract}>-</button>
+        </div>
+        <div className="multiply-divide">
+          <button onClick={multiply}>x</button>
+          <button onClick={divide}>/</button>
+        </div>
+        <button onClick={reset}>Reset</button>
+        <div className="contenedorResultado">
+          <h2 className="resultado">{localStorage.getItem("result")}</h2>
+        </div>
       </div>
 
     </>

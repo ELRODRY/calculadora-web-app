@@ -6,7 +6,6 @@
 }
 
 .calculadora {
-  border: 1px solid greenyellow;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -19,15 +18,28 @@
 
 .resultado {
   display: flex;
-  border: 1px solid red;
+  border: 3px solid rgb(0, 255, 55);
   height: 30px;
   width: 100px;
   justify-content: center;
   align-items: center;
 }
 
+.bordeExterior {
+  border: 5px solid #00ffff;
+  border-radius: 15px;
+}
+
 form {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.inputValor1 {
+  margin: 10px;
+}
+
+.inputValor2 {
+  margin: 10px;
 }

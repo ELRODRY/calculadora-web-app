@@ -53,8 +53,8 @@ export default function App() {
     setTriggerResult(!triggerResult);
   };
 
-  const resultLocalStorage = localStorage.getItem("result")
-    ? parseInt(localStorage.getItem("result")).toFixed(2)
+  const resultLocalStorage = !isNaN(parseInt(localStorage.getItem("result")))
+    ? parseFloat(localStorage.getItem("result")).toFixed(2)
     : "";
 
   return (

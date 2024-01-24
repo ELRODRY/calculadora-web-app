@@ -59,48 +59,59 @@ export default function App() {
 
   return (
     <>
-      <h1>CALCULADORA WEB</h1>
+      <body>
 
-      <div className="bordeExterior">
-        <form
-          className="calculadora"
-          ref={fomrRef}
-          id="inputsForm"
-          onSubmit={(e) => handleSubmit(e)}
-        >
-          <label htmlFor="valor1">Valor1</label>
-          <input
-            autoFocus
-            ref={inputRef}
-            className="inputValor1"
-            name="valor1"
-            id="valor1"
-            defaultValue={localStorage.getItem("valor1")}
-          />
+        <h1>CALCULADORA WEB</h1>
+        <div className="calculadoraContainer">
 
-          <label htmlFor="valor2">Valor2</label>
-          <input
-            className="inputValor2"
-            name="valor2"
-            id="valor2"
-            defaultValue={localStorage.getItem("valor2")}
-          />
+          <div className="bordeExterior">
+            <form
+              className="calculadora"
+              ref={fomrRef}
+              id="inputsForm"
+              onSubmit={(e) => handleSubmit(e)}
+            >
+              <label htmlFor="valor1">Valor1</label>
+              <input
+                autoFocus
+                ref={inputRef}
+                className="inputValor1"
+                name="valor1"
+                id="valor1"
+                defaultValue={localStorage.getItem("valor1")}
+              />
 
-          <button type="submit">INGRESAR VALOR</button>
-        </form>
-        <div className="add-subtract">
-          <button onClick={() => hacerCalculo("suma")}>+</button>
-          <button onClick={() => hacerCalculo("resta")}>-</button>
+              <label htmlFor="valor2">Valor2</label>
+              <input
+                className="inputValor2"
+                name="valor2"
+                id="valor2"
+                defaultValue={localStorage.getItem("valor2")}
+              />
+
+              <button className="ingValor" type="submit">INGRESAR VALOR</button>
+            </form>
+            <div className="add-subtract">
+              <button className="operador" onClick={() => hacerCalculo("suma")}>+</button>
+              <button className="operador" onClick={() => hacerCalculo("resta")}>-</button>
+            </div>
+            <div className="multiply-divide">
+              <button className="operador" onClick={() => hacerCalculo("multiplicacion")}>x</button>
+              <button className="operador" onClick={() => hacerCalculo("division")}>/</button>
+            </div>
+            <button className="reset" onClick={reset}>Reset</button>
+            <div className="contenedorResultado">
+              <h2 className="resultado">{resultLocalStorage}</h2>
+            </div>
+          </div>
         </div>
-        <div className="multiply-divide">
-          <button onClick={() => hacerCalculo("multiplicacion")}>x</button>
-          <button onClick={() => hacerCalculo("division")}>/</button>
-        </div>
-        <button onClick={reset}>Reset</button>
-        <div className="contenedorResultado">
-          <h2 className="resultado">{resultLocalStorage}</h2>
-        </div>
-      </div>
+        <footer>
+          <p>Proyecto hecho con el fin de aprender a usar el localStorage y
+            con la premisa de usar inputs no controlados <br />
+            Codigo Fuente <a href="https://github.com/ELRODRY/calculadora-web-app" target="_blank">GIT HUB</a>
+          </p>
+        </footer>
+      </body>
     </>
   );
 }

@@ -25,13 +25,15 @@ h1 {
   justify-content: center;
 }
 
-.resultado {
+#resultadoTotal {
   display: flex;
   border: 3px solid rgb(0, 255, 55);
   height: 30px;
-  width: 100px;
+  width: 160px;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .calculadoraContainer {
@@ -60,10 +62,12 @@ form {
 
 .inputValor1 {
   margin: 10px;
+  text-align: center;
 }
 
 .inputValor2 {
   margin: 10px;
+  text-align: center;
 }
 
 footer {

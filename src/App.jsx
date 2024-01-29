@@ -16,7 +16,7 @@ export default function App() {
 
   const [triggerResult, setTriggerResult] = useState(false);
   const inputRef = useRef(null);
-  const fomrRef = useRef(null);
+  const formRef = useRef(null);
 
   const hacerCalculo = (operacion) => {
     const valorUno = parseFloat(localStorage.getItem("valor1"));
@@ -48,8 +48,7 @@ export default function App() {
     localStorage.clear("result");
     localStorage.clear("valor1");
     localStorage.clear("valor2");
-    fomrRef.current.reset();
-    inputRef.current.focus();
+    formRef.current.reset();
     setTriggerResult(!triggerResult);
   };
 
@@ -60,19 +59,18 @@ export default function App() {
   return (
     <>
       <body>
-
         <h1>CALCULADORA WEB</h1>
         <div className="calculadoraContainer">
-
           <div className="bordeExterior">
             <form
               className="calculadora"
-              ref={fomrRef}
+              ref={formRef}
               id="inputsForm"
               onSubmit={(e) => handleSubmit(e)}
             >
               <label htmlFor="valor1">Valor1</label>
               <input
+                type="number"
                 autoFocus
                 ref={inputRef}
                 className="inputValor1"
@@ -83,32 +81,69 @@ export default function App() {
 
               <label htmlFor="valor2">Valor2</label>
               <input
+                type="number"
                 className="inputValor2"
                 name="valor2"
                 id="valor2"
                 defaultValue={localStorage.getItem("valor2")}
               />
 
-              <button className="ingValor" type="submit">INGRESAR VALOR</button>
+              <button className="ingValor" type="submit">
+                INGRESAR VALOR
+              </button>
             </form>
             <div className="add-subtract">
-              <button className="operador" onClick={() => hacerCalculo("suma")}>+</button>
-              <button className="operador" onClick={() => hacerCalculo("resta")}>-</button>
+              <button className="operador" onClick={() => hacerCalculo("suma")}>
+                +
+              </button>
+              <button
+                className="operador"
+                onClick={() => hacerCalculo("resta")}
+              >
+                -
+              </button>
             </div>
             <div className="multiply-divide">
-              <button className="operador" onClick={() => hacerCalculo("multiplicacion")}>x</button>
-              <button className="operador" onClick={() => hacerCalculo("division")}>/</button>
+              <button
+                className="operador"
+                onClick={() => hacerCalculo("multiplicacion")}
+              >
+                x
+              </button>
+              <button
+                className="operador"
+                onClick={() => hacerCalculo("division")}
+              >
+                /
+              </button>
             </div>
-            <button className="reset" onClick={reset}>Reset</button>
+            <button className="reset" onClick={reset}>
+              Reset
+            </button>
             <div className="contenedorResultado">
-              <h2 className="resultado">{resultLocalStorage}</h2>
+              {/* <h2 className="resultado" maxlength="10">{resultLocalStorage}</h2> */}
+              <input
+                type="text"
+                name="resultado"
+                id="resultadoTotal"
+                maxLength={10}
+                value={resultLocalStorage}
+                readOnly
+              />
             </div>
           </div>
         </div>
         <footer>
-          <p>Proyecto hecho con el fin de aprender a usar el localStorage y
-            con la premisa de usar inputs no controlados <br />
-            Codigo Fuente <a href="https://github.com/ELRODRY/calculadora-web-app" target="_blank">GIT HUB</a>
+          <p>
+            Proyecto hecho con el fin de aprender a usar el localStorage y con
+            la premisa de usar inputs no controlados <br />
+            Codigo Fuente{" "}
+            <a
+              href="https://github.com/ELRODRY/calculadora-web-app"
+              target="_blank"
+            >
+              GITHUB
+            </a>
           </p>
         </footer>
       </body>

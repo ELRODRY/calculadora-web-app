@@ -59,6 +59,7 @@ export default function App() {
   return (
     <>
       <body>
+
         <h1>CALCULADORA WEB</h1>
         <div className="calculadoraContainer">
           <div className="bordeExterior">
@@ -135,6 +136,7 @@ export default function App() {
             </div>
           </div>
         </div>
+
         <footer>
           <p>
             Proyecto hecho con el fin de aprender a usar el localStorage y con

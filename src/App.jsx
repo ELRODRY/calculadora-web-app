@@ -76,6 +76,7 @@ export default function App() {
                 className="inputValor1"
                 name="valor1"
                 id="valor1"
+                max={99999999}
                 defaultValue={localStorage.getItem("valor1")}
               />
 
@@ -85,6 +86,7 @@ export default function App() {
                 className="inputValor2"
                 name="valor2"
                 id="valor2"
+                max={99999999}
                 defaultValue={localStorage.getItem("valor2")}
               />
 
@@ -126,7 +128,7 @@ export default function App() {
                 type="text"
                 name="resultado"
                 id="resultadoTotal"
-                maxLength={10}
+
                 value={resultLocalStorage}
                 readOnly
               />
